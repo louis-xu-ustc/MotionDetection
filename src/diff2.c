@@ -58,15 +58,11 @@ int md_start_session(md_config_t *config)
     p = config->pitch;
 
     size = p * h;
-    if (xmalloc(size*sizeof(md_pixel_t), q) < 0) {
-        return -1;
-    }
+    q = xmalloc(size*sizeof(md_pixel_t));
     g_ms.data = q;
 
     size = w * h;
-    if (xmalloc(size*sizeof(u8), q) < 0) {
-        return -1;
-    }
+    q = xmalloc(size*sizeof(u8));
     g_ms.fg = (u8 *)q;
     g_ms.count = 0;
 

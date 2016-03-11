@@ -8,6 +8,6 @@
 #ifndef __COMMON_H__
 #define __COMMON_H__
 
-int xmalloc(size_t size, void *p);
+void *xmalloc(size_t size);
 
 #endif

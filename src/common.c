@@ -6,19 +6,21 @@
 */
 
 #include <stdlib.h>
+#include <stdio.h>
 #include "common.h"
-#include "print.h"
 
-int xmalloc(size_t size, void *p)
+void *xmalloc(size_t size)
 {
-    int ret = 0;
+    void *p =NULL;
     
+    if (!size) {
+        printf("size of malloc invalid!\n");
+    }
     p = malloc(size);
     if (!p) {
-        log_err("malloc error!\n");
-        ret = -1;
+        printf("malloc error!\n");
     }
 
-    return ret;
+    return p;
 }
 
